@@ -1,8 +1,25 @@
 {
+  "name": "pomotrack-api",
+  "version": "0.0.1",
+  "main": "server.js",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "keywords": [
+    "pomodoro-timer"
+  ],
+  "author": "muhodev",
+  "license": "MIT",
+  "description": "",
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "mongoose": "^6.2.0"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   }
 }
