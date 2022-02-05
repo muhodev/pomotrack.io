@@ -1,9 +1,8 @@
-import Head from "next/head";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Button, Icon } from "components";
+import { Button, Head } from "components";
 import { SkipNextIcon } from "components/Icons";
 
 const pomodoroTypes = {
@@ -68,9 +67,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>{timerString} | Pomotrack.io</title>
-      </Head>
+      <Head title={`${timerString} | Pomotrack.io`}></Head>
       <div className="bg-primary min-h-screen text-gray-50">
         <header>
           <div className="container mx-auto py-6 max-w-xl">
@@ -86,6 +83,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-2">
               {Object.keys(pomodoroTypes).map((p) => (
                 <Button
+                  key={p}
                   size="small"
                   className={p === pomodoroType ? "bg-black bg-opacity-20" : ""}
                   onClick={() => {
