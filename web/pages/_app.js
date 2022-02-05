@@ -1,20 +1,20 @@
 import { appWithTranslation } from "next-i18next";
 import Script from "next/script";
-import "../styles/main.css";
+import { GOOGLE_ANALYTICS_KEY } from "@constants";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
         strategy="lazyOnload"
-        src="https://www.googletagmanager.com/gtag/js?id=G-6BG3M8G3SV"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_KEY}`}
       ></Script>
       <Script strategy="lazyOnload">
         {`  window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-6BG3M8G3SV');`}
+            gtag('config', '${GOOGLE_ANALYTICS_KEY}');`}
       </Script>
       <Component {...pageProps} />
     </>

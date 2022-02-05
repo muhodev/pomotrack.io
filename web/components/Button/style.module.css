@@ -1,5 +1,5 @@
 .button {
-    @apply max-h-11 font-medium rounded  h-11 px-2 flex items-center justify-center;
+    @apply max-h-11 font-medium rounded  h-11 px-2 flex items-center justify-center relative active:top-0.5 transition;
 }
 
 .size-small {

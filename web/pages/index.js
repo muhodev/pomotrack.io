@@ -47,7 +47,6 @@ export default function Home() {
 
     if (timerStatus === "running" && timer > 0) {
       interval = setInterval(() => {
-        console.log("Running");
         let newTimer;
         setTimer((t) => {
           newTimer = t - 1;
