@@ -3,5 +3,6 @@
     "shortBreak": "Kısa Mola",
     "longBreak": "Uzun Mola",
     "stop": "Durdur",
-    "start": "Başlat"
+    "start": "Başlat",
+    "siteDescription": "Pomotrack.io web tabanlı basit bir pomodoro timer uygulamasıdır. Görevlerinizi veya yapılacak işlerinizi pomodoro zamanlayıcısını kullanarak. Pomotrack.io ücretsiz ve açık kaynaklı bir yazılımdır."
 }

@@ -5,5 +5,6 @@
     "stop": "Stop",
     "start": "Start",
     "longBreakTitle": "Uzun bir ara verelim. Bunu hak ettin!",
-    "shortBreakTitle": "Kısa bir ara verme zamanı."
+    "shortBreakTitle": "Kısa bir ara verme zamanı.",
+    "siteDescription": "Pomotrack.io is a simple online web based pomodoro timer tool to track your tasks or todos with pomodoro sessions.It is free and open source. "
 }

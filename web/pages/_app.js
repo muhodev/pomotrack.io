@@ -2,6 +2,8 @@ import { appWithTranslation } from "next-i18next";
 import Script from "next/script";
 import { GOOGLE_ANALYTICS_KEY } from "@constants";
 
+import "styles/globals.css";
+
 function MyApp({ Component, pageProps }) {
   return (
     <>

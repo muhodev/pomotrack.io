@@ -66,10 +66,10 @@ export default function Home() {
 
   return (
     <>
-      <Head title={`${timerString} | Pomotrack.io`}></Head>
+      <Head title={`${timerString}`} description={t("siteDescription")}></Head>
       <div className="bg-primary min-h-screen text-gray-50">
         <header>
-          <div className="container mx-auto py-6 max-w-xl">
+          <div className="container mx-auto py-6 max-w-xl md:max-w-2xl lg:max-w-3xl">
             <h1>
               <Link href="/">
                 <a className="font-bold text-xl underline">Pomotrack.io</a>
@@ -77,8 +77,8 @@ export default function Home() {
             </h1>
           </div>
         </header>
-        <div className="container mx-auto">
-          <div className="bg-white bg-opacity-10 container mx-auto max-w-xl rounded-md py-4 px-6">
+        <div className="container mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl">
+          <div className="bg-white bg-opacity-10 rounded-md py-4 px-6">
             <div className="flex items-center justify-center gap-2">
               {Object.keys(pomodoroTypes).map((p) => (
                 <Button
@@ -95,7 +95,7 @@ export default function Home() {
                 </Button>
               ))}
             </div>
-            <div className="text-9xl font-bold text-center py-12">
+            <div className="text-5xl md:text-9xl font-bold text-center py-12">
               {timerString}
             </div>
             <div className="flex items-center gap-2">
