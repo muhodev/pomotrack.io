@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#6657D5",
+        primary: "var(--c-primary)",
+        oposite: "var(--c-oposite)",
+        subdued: "var(--c-subdued)",
       },
       container: {
         padding: {

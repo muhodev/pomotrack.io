@@ -4,7 +4,35 @@
 
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);}
 
+:root {
+    --c-primary: #6657D5;
+    --c-oposite: #f7f7f7;
+    --c-subdued: #f7f7f7;
+}
+
+.theme-gray {
+    --c-primary: #15181c;
+    --c-oposite: #d9d9d9;
+}
+
+.theme-purple {
+    --c-primary: #6657D5;
+    --c-oposite: #d9d9d9;
+
+}
+
+.theme-orange {
+    --c-primary:#d57f57; 
+    --c-oposite: #d9d9d9;
+
+}
+
+.theme-blue {
+    --c-primary: #5779d5;
+    --c-oposite: #d9d9d9;
+
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    color: red !important;
 }

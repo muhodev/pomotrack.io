@@ -1,5 +1,5 @@
-import { SITE_TITLE } from "@constants";
 import NextHead from "next/head";
+import { SITE_TITLE } from "@constants";
 
 export function Head(props) {
   return (

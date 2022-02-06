@@ -9,11 +9,15 @@ class MyDocument extends Document {
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
-            crossOrigin={true}
+            crossOrigin="true"
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             rel="stylesheet"
+          />
+          <link
+            rel="canonical"
+            href={`${process.env.NEXT_PUBLIC_SITE_URL}${this?.props?.canonicalBase}`}
           />
         </Head>
         <body>
