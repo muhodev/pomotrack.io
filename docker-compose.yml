@@ -1,0 +1,21 @@
+version: '3'
+services:
+  pomotrack-api:
+    build:
+      context: ./api
+    ports:
+      - "3080:3000"
+    container_name: pomotrack-api
+    volumes:
+       - ./api:/usr/src/app/api
+       - /usr/src/app/api/node_modules
+  pomotrack-web:
+    build:
+      context: ./web
+    ports:
+      - "3000:3000"
+    container_name: pomotrack-web
+    stdin_open: true
+    volumes:
+       - ./web:/usr/src/app/web
+       - /usr/src/app/web/node_modules
