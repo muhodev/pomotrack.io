@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        groun: "var(--c-ground)",
         primary: "var(--c-primary)",
         oposite: "var(--c-oposite)",
         subdued: "var(--c-subdued)",

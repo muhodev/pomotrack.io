@@ -2,75 +2,31 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Button, Head } from "components";
+import { Button, Head, Layout } from "components";
 import { SkipNextIcon } from "components/Icons";
-import Script from "next/script";
+import { usePomodoro } from "hooks/usePomodoro";
 
-const pomodoroTypes = {
-  pomodoro: 1500,
-  shortBreak: 300,
-  longBreak: 900,
-};
 export default function Home() {
   const { t } = useTranslation("common");
-  const [pomodoroType, setPomodoroType] = useState("pomodoro");
-  const [timerStatus, setTimerStatus] = useState("idle");
-  const [timer, setTimer] = useState(pomodoroTypes["pomodoro"]);
-  const [pomodoroIntervalCount, setPomodoroIntervalCount] = useState(1);
-  const [longBreakIntervalCount, setLongBreakIntervalCount] = useState(4);
 
-  const minutes = Math.floor(timer / 60);
-  const seconds = timer % 60;
-
-  const nextPomodoroType = () => {
-    if (pomodoroType === "pomodoro") {
-      return pomodoroIntervalCount % longBreakIntervalCount === 0
-        ? "longBreak"
-        : "shortBreak";
-    }
-    return "pomodoro";
-  };
-
-  const handleNextPomodoroType = () => {
-    const newPomodorotype = nextPomodoroType();
-
-    newPomodorotype === "pomodoro" &&
-      setPomodoroIntervalCount((prev) => prev + 1);
-
-    setTimerStatus("idle");
-    setTimer(pomodoroTypes[newPomodorotype]);
-    setPomodoroType(newPomodorotype);
-  };
-
-  useEffect(() => {
-    let interval;
-    const clearTimerInterval = () => clearInterval(interval);
-
-    if (timerStatus === "running" && timer > 0) {
-      interval = setInterval(() => {
-        let newTimer;
-        setTimer((t) => {
-          newTimer = t - 1;
-          return newTimer;
-        });
-        if (newTimer === 0) {
-          handleNextPomodoroType();
-        }
-      }, 1000);
-    }
-    return clearTimerInterval;
-  }, [timerStatus]);
-
-  const timerString = `${minutes < 10 ? "0" + minutes : minutes}:${
-    seconds < 10 ? "0" + seconds : seconds
-  }`;
+  const {
+    timerString,
+    pomodoroTypes,
+    pomodoroType,
+    setPomodoroType,
+    setTimerStatus,
+    timerStatus,
+    pomodoroIntervalCount,
+    handleNextPomodoroType,
+    setTimer,
+  } = usePomodoro();
 
   return (
-    <>
+    <Layout>
       <Head title={`${timerString}`} description={t("siteDescription")}></Head>
-      <div className="bg-primary min-h-screen text-oposite">
+      <div className="min-h-screen">
         <header>
-          <div className="container mx-auto py-6 max-w-xl md:max-w-2xl lg:max-w-3xl">
+          <div className="container mx-auto py-6">
             <h1>
               <Link href="/">
                 <a className="font-bold text-xl underline">Pomotrack.io</a>
@@ -149,7 +105,7 @@ export default function Home() {
           </div> */}
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 
