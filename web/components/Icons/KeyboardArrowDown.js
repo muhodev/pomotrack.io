@@ -1,4 +1,6 @@
-export function SkipNextIcon(props) {
+import * as React from "react";
+
+function SvgKeyboardArrowDown(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +11,9 @@ export function SkipNextIcon(props) {
       {...props}
     >
       <path d="M0 0h24v24H0V0z" fill="none" />
-      <path d="M6 18l8.5-6L6 6v12zm2-8.14L11.03 12 8 14.14V9.86zM16 6h2v12h-2z" />
+      <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
     </svg>
   );
 }
+
+export default SvgKeyboardArrowDown;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Button, Head, Layout } from "components";
-import { SkipNextIcon } from "components/Icons";
+import { SkipNext } from "components/Icons";
 import { usePomodoro } from "hooks/usePomodoro";
 
 export default function Home() {
@@ -71,7 +71,7 @@ export default function Home() {
                 <Button
                   className="bg-oposite text-primary "
                   onClick={handleNextPomodoroType}
-                  icon={SkipNextIcon}
+                  icon={SkipNext}
                 ></Button>
               )}
             </div>
