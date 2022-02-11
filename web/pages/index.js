@@ -25,23 +25,14 @@ export default function Home() {
     <Layout>
       <Head title={`${timerString}`} description={t("siteDescription")}></Head>
       <div className="min-h-screen">
-        <header>
-          <div className="container mx-auto py-6">
-            <h1>
-              <Link href="/">
-                <a className="font-bold text-xl underline">Pomotrack.io</a>
-              </Link>
-            </h1>
-          </div>
-        </header>
-        <div className="container mx-auto max-w-xl md:max-w-2xl lg:max-w-3xl">
-          <div className="bg-white bg-opacity-10 rounded-md py-4 px-6">
+        <div className="">
+          <div className="rounded-md my-10 py-4 px-6 bg-surface-color container mx-auto max-w-xl border border-primary-color">
             <div className="flex items-center justify-center gap-2">
               {Object.keys(pomodoroTypes).map((p) => (
                 <Button
                   key={p}
                   size="small"
-                  className={p === pomodoroType ? "bg-black bg-opacity-20" : ""}
+                  className={p === pomodoroType ? "bg-main-color" : ""}
                   onClick={() => {
                     setTimerStatus("idle");
                     setPomodoroType(p);
@@ -58,7 +49,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <Button
                 fullWidth
-                className="bg-oposite text-primary rounded-md"
+                className="bg-primary text-main-color rounded-md"
                 onClick={() =>
                   setTimerStatus((prev) =>
                     prev === "running" ? "idle" : "running"
@@ -69,21 +60,21 @@ export default function Home() {
               </Button>
               {timerStatus === "running" && (
                 <Button
-                  className="bg-oposite text-primary "
+                  className="bg-primary text-main-color rounded-md"
                   onClick={handleNextPomodoroType}
                   icon={SkipNext}
                 ></Button>
               )}
             </div>
           </div>
-          <div className="flex items-center justify-center relative after:absolute after:h-[.5px] after:bg-oposite after:left-0 after:right-0 my-4 text-sm">
-            <div className="text inline-flex gap-1 px-4 bg-primary z-10">
+          <div className="relative flex items-center justify-center ">
+            <div className="divider absolute"></div>
+            <div className="text  gap-1 px-4 bg-main-color z-10">
               <span className="text-subdued">{t("today")}:</span>
               <span>#{pomodoroIntervalCount} pomodoro</span>
             </div>
           </div>
-          <div>Projects</div>
-          <div className="my-2 border border-dotted py-4 px-6">{t("soon")}</div>
+
           {/* 
           Youtube video to audio stream
           https://www.labnol.org/internet/youtube-audio-player/26740/

@@ -6,7 +6,7 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlig
 
 :root {
     --c-ground: #f7f7fa;
-    --c-primary: #6657D5;
+    --c-primary: #2860e1;
     --c-oposite: #f7f7f7;
     --c-subdued: #f7f7f7;
 }
@@ -37,4 +37,30 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlig
 body {
     background-color: var(--c-ground);
     font-family: 'Roboto', sans-serif;
+}
+
+
+.text-main-color {
+    @apply text-black dark:text-[#e5e7eb];
+}
+
+
+.bg-main-color {
+    @apply bg-white dark:bg-[#141415];
+}
+
+.bg-surface-color {
+    @apply bg-white dark:bg-[#1d1e1f]
+}
+
+.divider {
+    @apply h-[.5px] dark:bg-[#212121] w-full;
+}
+
+.divider-primary-color {
+    @apply dark:bg-[#212121]
+}
+
+.border-primary-color {
+    @apply border-[#212121]
 }

@@ -1,5 +1,12 @@
 import { Logo, Icon } from "components";
-import { Folder, KeyboardArrowDown, KeyboardArrowLeft } from "components/Icons";
+import {
+  CalendarToday,
+  Folder,
+  KeyboardArrowDown,
+  KeyboardArrowLeft,
+  Assessment,
+  TaskAlt,
+} from "components/Icons";
 import { useTranslation } from "next-i18next";
 import { useState } from "react";
 import cn from "classnames";
@@ -7,20 +14,58 @@ import style from "./style.module.css";
 
 export function Sidebar(props) {
   const { t } = useTranslation("common");
+  const items = [
+    {
+      icon: <Icon source={CalendarToday} size="small" />,
+      label: t("today"),
+      url: "/",
+    },
+    {
+      icon: <Icon source={Assessment} size="small" />,
+      label: t("reports"),
+      url: "/reports",
+    },
+    {
+      icon: <Icon source={Folder} size="small" />,
+      label: t("projects"),
+      children: [
+        {
+          icon: <div className="bg-red-500 w-2 h-2 rounded-full"></div>,
+          content: t("common"),
+        },
+      ],
+    },
+    {
+      icon: <Icon source={TaskAlt} size="small" />,
+      label: t("tasks"),
+      children: [
+        {
+          icon: <div className="bg-red-500 w-2 h-2 rounded-full"></div>,
+          content: t("common"),
+        },
+      ],
+    },
+  ];
   return (
-    <aside className={style.sidebar}>
-      <Logo />
+    <aside
+      className={cn(
+        style.sidebar,
+        "bg-main-color border-r border-primary-color sticky left-0 top-0 pt-16 z-[999]"
+      )}
+    >
       <Menu>
-        <Menu.SubMenu
-          icon={<Icon source={Folder} size="small" />}
-          content={t("projects")}
-          items={[
-            {
-              icon: <div className="bg-red-500 w-2 h-2 rounded-full"></div>,
-              content: t("common"),
-            },
-          ]}
-        />
+        {items.map((item, index) =>
+          Array.isArray(item.children) ? (
+            <Menu.SubMenu
+              key={index}
+              icon={item.icon}
+              content={item.label}
+              items={item.children}
+            />
+          ) : (
+            <Menu.Item key={index} icon={item.icon} content={item.label} />
+          )
+        )}
       </Menu>
     </aside>
   );
@@ -34,11 +79,11 @@ Menu.Item = function ({ content, icon, className }) {
   return (
     <div
       className={cn(
-        "flex items-center gap-2 py-4 px-2 cursor-pointer select-none",
+        "flex items-center gap-2 py-2 px-4 cursor-pointer select-none",
         className
       )}
     >
-      <div className="min-w-[24px] flex items-center justify-center">
+      <div className="min-w-[24px] flex items-center justify-center text-gray-7 00">
         {icon}
       </div>
       {content}
@@ -59,7 +104,7 @@ Menu.SubMenu = function (props) {
         <Icon source={isOpen ? KeyboardArrowDown : KeyboardArrowLeft} />
       </div>
       {isOpen && (
-        <ul className="border-t">
+        <ul>
           {Array.isArray(props.items) &&
             props.items.map((item, index) => (
               <Menu.Item

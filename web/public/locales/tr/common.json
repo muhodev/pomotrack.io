@@ -6,5 +6,8 @@
     "start": "Başlat",
     "siteDescription": "Pomotrack.io web tabanlı basit bir pomodoro timer uygulamasıdır. Görevlerinizi veya yapılacak işlerinizi pomodoro zamanlayıcısını kullanarak. Pomotrack.io ücretsiz ve açık kaynaklı bir yazılımdır.",
     "today": "Bugün",
-    "soon": "Yakında..."
+    "soon": "Yakında...",
+    "projects": "Projeler",
+    "tasks": "Görevler",
+    "reports": "Rapor"
 }

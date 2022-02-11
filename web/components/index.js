@@ -6,3 +6,4 @@ export * from "./Layout";
 export * from "./Typography";
 export * from "./Link";
 export * from "./Logo";
+export * from "./Header";
