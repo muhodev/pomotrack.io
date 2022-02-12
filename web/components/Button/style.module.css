@@ -1,5 +1,5 @@
 .button {
-    @apply max-h-11 font-medium rounded px-2 h-11 flex items-center justify-center relative active:top-0.5 transition select-none;
+    @apply max-h-11 font-medium rounded px-2 h-11 flex items-center justify-center gap-2 relative active:top-0.5 transition select-none;
 }
 
 .size-small {
@@ -9,4 +9,12 @@
 
 .size-default {
     @apply h-11 max-h-11 min-w-[2.75rem] text-base md:text-lg;
+}
+
+.variant-default {
+    
+}
+
+.variant-primary {
+    @apply bg-primary;
 }

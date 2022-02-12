@@ -1,3 +1,4 @@
+export { default as AccountCircle } from './AccountCircle'
 export { default as Assessment } from './Assessment'
 export { default as CalendarToday } from './CalendarToday'
 export { default as Folder } from './Folder'

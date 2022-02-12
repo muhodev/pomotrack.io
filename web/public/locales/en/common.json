@@ -8,5 +8,11 @@
     "shortBreakTitle": "Kısa bir ara verme zamanı.",
     "siteDescription": "Pomotrack.io is a simple online web based pomodoro timer tool to track your tasks or todos with pomodoro sessions.It is free and open source. ",
     "today": "Today",
-    "soon": "Soon..."
+    "soon": "Soon...",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "reports": "Reports",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
 }

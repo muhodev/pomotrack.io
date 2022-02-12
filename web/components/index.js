@@ -7,3 +7,4 @@ export * from "./Typography";
 export * from "./Link";
 export * from "./Logo";
 export * from "./Header";
+export * from "./Avatar";

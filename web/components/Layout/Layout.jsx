@@ -6,7 +6,9 @@ export function Layout(props) {
       <Header />
       <div className="w-full flex items-start">
         <Sidebar />
-        <main className="flex-1 bg-main-color pt-16">{props.children}</main>
+        <main className="flex-1 bg-main-color pt-16 min-h-screen">
+          {props.children}
+        </main>
       </div>
     </div>
   );

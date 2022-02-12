@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <Layout>
       <Head title={`${timerString}`} description={t("siteDescription")}></Head>
-      <div className="min-h-screen">
+      <div>
         <div className="">
           <div className="rounded-md my-10 py-4 px-6 bg-surface-color container mx-auto max-w-xl border border-primary-color">
             <div className="flex items-center justify-center gap-2">

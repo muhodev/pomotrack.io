@@ -44,6 +44,14 @@ body {
     @apply text-black dark:text-[#e5e7eb];
 }
 
+.bg-purple-color {
+    @apply bg-[#9540ea];
+}
+
+.bg-orange-color {
+    @apply bg-[#edc500];
+}
+
 
 .bg-main-color {
     @apply bg-white dark:bg-[#141415];
