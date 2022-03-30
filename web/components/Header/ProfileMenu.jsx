@@ -21,7 +21,7 @@ export function ProfileMenu() {
     },
   ];
   return (
-    <div className="w-56 text-right ">
+    <div className="text-right">
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
@@ -47,6 +47,7 @@ export function ProfileMenu() {
                       variant={active && "primary"}
                       size="small"
                       fullWidth={true}
+                      className="hover:bg-primary"
                       style={{ justifyContent: "flex-start" }}
                     >
                       {item.label}

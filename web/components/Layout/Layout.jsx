@@ -2,13 +2,11 @@ import { Sidebar, Header } from "components";
 
 export function Layout(props) {
   return (
-    <div className="text-main-color">
+    <div className="text-main-color bg-main-color min-h-screen">
       <Header />
-      <div className="w-full flex items-start">
+      <div className="flex items-start">
         <Sidebar />
-        <main className="flex-1 bg-main-color pt-16 min-h-screen">
-          {props.children}
-        </main>
+        <main className="flex-1">{props.children}</main>
       </div>
     </div>
   );

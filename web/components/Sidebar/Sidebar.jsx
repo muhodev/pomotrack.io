@@ -50,7 +50,7 @@ export function Sidebar(props) {
     <aside
       className={cn(
         style.sidebar,
-        "bg-main-color border-r border-primary-color sticky left-0 top-0 pt-16 z-[999]"
+        "bg-main-color border-r border-primary-color sticky left-0 top-0 py-2 z-[999] text-sm"
       )}
     >
       <Menu>

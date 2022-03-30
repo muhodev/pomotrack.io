@@ -1,3 +1,4 @@
 .sidebar {
-    @apply dark:text-white min-h-screen min-w-[240px] ;
+    @apply dark:text-white min-w-[240px] ;
+    min-height: calc(100vh - 4rem);
 }
