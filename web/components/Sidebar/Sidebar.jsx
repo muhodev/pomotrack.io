@@ -3,9 +3,10 @@ import {
   CalendarToday,
   Folder,
   KeyboardArrowDown,
-  KeyboardArrowLeft,
+  KeyboardArrowRight,
   Assessment,
   TaskAlt,
+  AddCircle,
 } from "components/Icons";
 import { useTranslation } from "next-i18next";
 import { useState } from "react";
@@ -27,7 +28,14 @@ export function Sidebar(props) {
     },
     {
       icon: <Icon source={Folder} size="small" />,
-      label: t("projects"),
+      label: (
+        <div className="flex items-center gap-2 w-full">
+          <div className="flex-1">{t("projects")}</div>
+          <div className="text-neutral-400">
+            <Icon source={AddCircle} size="small" />
+          </div>
+        </div>
+      ),
       children: [
         {
           icon: <div className="bg-red-500 w-2 h-2 rounded-full"></div>,
@@ -37,7 +45,14 @@ export function Sidebar(props) {
     },
     {
       icon: <Icon source={TaskAlt} size="small" />,
-      label: t("tasks"),
+      label: (
+        <div className="flex items-center gap-2 w-full">
+          <div className="flex-1">{t("tasks")}</div>
+          <div className="text-neutral-400">
+            <Icon source={AddCircle} size="small" />
+          </div>
+        </div>
+      ),
       children: [
         {
           icon: <div className="bg-red-500 w-2 h-2 rounded-full"></div>,
@@ -79,7 +94,7 @@ Menu.Item = function ({ content, icon, className }) {
   return (
     <div
       className={cn(
-        "flex items-center gap-2 py-2 px-4 cursor-pointer select-none",
+        "flex items-center gap-2 py-3 px-4 cursor-pointer select-none",
         className
       )}
     >
@@ -97,11 +112,15 @@ Menu.SubMenu = function (props) {
     <div>
       <div onClick={() => setOpen((o) => !o)} className="flex items-center">
         <Menu.Item
-          icon={props.icon}
+          icon={
+            <Icon
+              source={isOpen ? KeyboardArrowDown : KeyboardArrowRight}
+              size="small"
+            />
+          }
           content={props.content}
           className="flex-1"
         ></Menu.Item>
-        <Icon source={isOpen ? KeyboardArrowDown : KeyboardArrowLeft} />
       </div>
       {isOpen && (
         <ul>
