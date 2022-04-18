@@ -1,5 +1,11 @@
-import { Heading, Link } from "components";
+import Link from "next/link";
 
 export function Logo(props) {
-  return <Heading level={2}>pomotrack.io</Heading>;
+  return (
+    <h1>
+      <Link href="/">
+        <a className="text-lg md:text-xl font-medium">pomotrack.io</a>
+      </Link>
+    </h1>
+  );
 }

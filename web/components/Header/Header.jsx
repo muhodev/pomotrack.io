@@ -1,29 +1,24 @@
-import { useState } from "react";
-import { useTranslation } from "next-i18next";
-
-import { Logo, Button } from "components";
-import { ProfileMenu, SearchInput } from "./index";
+import { Logo } from "components";
 
 export function Header(props) {
-  const { t } = useTranslation();
-  const [searchValue, setSearchValue] = useState("");
+  /* const { t } = useTranslation(); */
   return (
-    <header className="px-4 h-16 border-b w-full border-primary-color flex items-center justify-between sticky top-0 z-[9999] gap-8">
-      <div className="flex items-center gap-6">
+    <header className="px-4 h-16 border-b border-neutral-200 dark:border-neutral-800 w-full flex items-center justify-between sticky top-0 z-[9999] gap-8">
+      <div className="container mx-auto">
         <Logo />
       </div>
-      <div className="flex items-center gap-6">
-        {/* <div>
+      {/*    <div className="flex items-center gap-6">
+        <div>
           <SearchInput
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />
-        </div> */}
+        </div>
         <Button size="small" variant="primary">
           {t("createtask")}
         </Button>
         <ProfileMenu />
-      </div>
+      </div> */}
     </header>
   );
 }

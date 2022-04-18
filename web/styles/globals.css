@@ -58,11 +58,11 @@ body {
 }
 
 .bg-surface-color {
-    @apply bg-white dark:bg-[#1d1e1f]
+    @apply bg-neutral-50 dark:bg-[#1d1e1f]
 }
 
 .divider {
-    @apply h-[.5px] dark:bg-[#212121] w-full;
+    @apply h-[.5px] bg-neutral-200 dark:bg-neutral-800  w-full;
 }
 
 .divider-primary-color {

@@ -25,54 +25,69 @@ export default function Home() {
     <Layout>
       <Head title={`${timerString}`} description={t("siteDescription")}></Head>
       <div>
-        <div className="">
-          <div className="rounded-md my-10 py-4 px-6 bg-surface-color container mx-auto max-w-xl border border-primary-color">
-            <div className="flex items-center justify-center gap-2">
-              {Object.keys(pomodoroTypes).map((p) => (
+        <div>
+          <div
+            style={{ minHeight: "calc(100vh - 10rem)" }}
+            className="flex items-start justify-center"
+          >
+            <div className="rounded-md my-12 py-4 px-6 bg-surface-color container mx-auto max-w-xl border border-neutral-200 dark:border-neutral-800">
+              <div className="flex items-center justify-center gap-2 text-neutral-700 dark:text-neutral-400">
+                {Object.keys(pomodoroTypes).map((p) => (
+                  <Button
+                    key={p}
+                    size="small"
+                    className={
+                      p === pomodoroType
+                        ? "dark:bg-neutral-900 bg-neutral-200 text-neutral-900 dark:text-neutral-300"
+                        : ""
+                    }
+                    onClick={() => {
+                      setTimerStatus("idle");
+                      setPomodoroType(p);
+                      setTimer(pomodoroTypes[p]);
+                    }}
+                  >
+                    {t(p)}
+                  </Button>
+                ))}
+              </div>
+              <div className="text-5xl md:text-9xl font-bold text-center py-12">
+                {timerString}
+              </div>
+              <div className="flex items-center gap-2">
                 <Button
-                  key={p}
-                  size="small"
-                  className={p === pomodoroType ? "bg-main-color" : ""}
-                  onClick={() => {
-                    setTimerStatus("idle");
-                    setPomodoroType(p);
-                    setTimer(pomodoroTypes[p]);
-                  }}
+                  fullWidth
+                  className="bg-primary text-white rounded-md"
+                  onClick={() =>
+                    setTimerStatus((prev) =>
+                      prev === "running" ? "idle" : "running"
+                    )
+                  }
                 >
-                  {t(p)}
+                  {t(timerStatus === "running" ? "stop" : "start")}
                 </Button>
-              ))}
-            </div>
-            <div className="text-5xl md:text-9xl font-bold text-center py-12">
-              {timerString}
-            </div>
-            <div className="flex items-center gap-2">
-              <Button
-                fullWidth
-                className="bg-primary text-main-color rounded-md"
-                onClick={() =>
-                  setTimerStatus((prev) =>
-                    prev === "running" ? "idle" : "running"
-                  )
-                }
-              >
-                {t(timerStatus === "running" ? "stop" : "start")}
-              </Button>
-              {timerStatus === "running" && (
-                <Button
-                  className="bg-primary text-main-color rounded-md"
-                  onClick={handleNextPomodoroType}
-                  icon={SkipNext}
-                ></Button>
-              )}
+                {timerStatus === "running" && (
+                  <Button
+                    className="bg-primary text-white rounded-md"
+                    onClick={handleNextPomodoroType}
+                    icon={SkipNext}
+                  ></Button>
+                )}
+              </div>
             </div>
           </div>
+
           <div className="relative flex items-center justify-center ">
             <div className="divider absolute"></div>
             <div className="text  gap-1 px-4 bg-main-color z-10">
-              <span className="text-subdued">{t("today")}:</span>
+              <span className="text-neutral-600 dark:text-neutral-300">
+                {t("today")}:
+              </span>
               <span>#{pomodoroIntervalCount} pomodoro</span>
             </div>
+          </div>
+          <div className="text-center my-4">
+            {t("projects")} {t("soon")}
           </div>
 
           {/* 

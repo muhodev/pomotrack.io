@@ -5,7 +5,7 @@ export function Layout(props) {
     <div className="text-main-color bg-main-color min-h-screen">
       <Header />
       <div className="flex items-start">
-        <Sidebar />
+        {/*  <Sidebar /> */}
         <main className="flex-1">{props.children}</main>
       </div>
     </div>
