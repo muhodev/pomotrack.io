@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Button, Head, Layout } from "components";
 import { SkipNext } from "components/Icons";
 import { usePomodoro } from "hooks/usePomodoro";
+import { HOME_TITLE } from "@constants";
 
 export default function Home() {
+  const [startedPomodoro, setStartedPomodoro] = useState(false);
   const { t } = useTranslation("common");
 
   const {
@@ -16,14 +17,18 @@ export default function Home() {
     setPomodoroType,
     setTimerStatus,
     timerStatus,
-    pomodoroIntervalCount,
     handleNextPomodoroType,
     setTimer,
   } = usePomodoro();
 
+  useEffect(() => {}, [timerString]);
+
   return (
     <Layout>
-      <Head title={`${timerString}`} description={t("siteDescription")}></Head>
+      <Head
+        title={startedPomodoro ? timerString : HOME_TITLE}
+        description={t("siteDescription")}
+      ></Head>
       <div>
         <div>
           <div
@@ -45,6 +50,7 @@ export default function Home() {
                       setTimerStatus("idle");
                       setPomodoroType(p);
                       setTimer(pomodoroTypes[p]);
+                      setStartedPomodoro(true);
                     }}
                   >
                     {t(p)}
@@ -58,11 +64,12 @@ export default function Home() {
                 <Button
                   fullWidth
                   className="bg-primary text-white rounded-md"
-                  onClick={() =>
+                  onClick={() => {
                     setTimerStatus((prev) =>
                       prev === "running" ? "idle" : "running"
-                    )
-                  }
+                    );
+                    setStartedPomodoro(true);
+                  }}
                 >
                   {t(timerStatus === "running" ? "stop" : "start")}
                 </Button>
