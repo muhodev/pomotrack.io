@@ -13,5 +13,10 @@
     "profile": "Profil",
     "settings": "Ayarlar",
     "logout": "Çıkış Yap",
-    "createtask": "Yeni Görev"
+    "createtask": "Yeni Görev",
+    "about": "Hakkında",
+    "termsOfService": "Kullanım Şartları",
+    "privacyPolicy": "Gizlilik Politikası",
+    "pomodoroTechnique": "Pomodoro Tekniği",
+    "blog": "Blog"
 }

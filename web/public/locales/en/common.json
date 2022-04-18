@@ -14,5 +14,10 @@
     "reports": "Reports",
     "profile": "Profile",
     "settings": "Settings",
-    "logout": "Logout"
+    "logout": "Logout",
+    "about": "About",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "pomodoroTechnique": "Pomodoro Technique",
+    "blog": "Blog"
 }

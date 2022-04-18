@@ -1,4 +1,4 @@
-import { Sidebar, Header } from "components";
+import { Sidebar, Header, Footer } from "components";
 
 export function Layout(props) {
   return (
@@ -8,6 +8,7 @@ export function Layout(props) {
         {/*  <Sidebar /> */}
         <main className="flex-1">{props.children}</main>
       </div>
+      <Footer />
     </div>
   );
 }

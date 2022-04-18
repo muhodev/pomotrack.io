@@ -27,7 +27,7 @@ export default function Home() {
       <div>
         <div>
           <div
-            style={{ minHeight: "calc(100vh - 10rem)" }}
+            style={{ minHeight: "calc(100vh - 8rem)" }}
             className="flex items-start justify-center"
           >
             <div className="rounded-md my-12 py-4 px-6 bg-surface-color container mx-auto max-w-xl border border-neutral-200 dark:border-neutral-800">
@@ -77,7 +77,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center ">
+          {/*   <div className="relative flex items-center justify-center ">
             <div className="divider absolute"></div>
             <div className="text  gap-1 px-4 bg-main-color z-10">
               <span className="text-neutral-600 dark:text-neutral-300">
@@ -89,7 +89,7 @@ export default function Home() {
           <div className="text-center my-4">
             {t("projects")} {t("soon")}
           </div>
-
+ */}
           {/* 
           Youtube video to audio stream
           https://www.labnol.org/internet/youtube-audio-player/26740/
