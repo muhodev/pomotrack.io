@@ -1,0 +1,15 @@
+.textField {
+    @apply rounded-md w-full;
+}
+
+.size-small {
+    @apply h-8 max-h-8 min-w-[2rem] text-xs md:text-sm align-middle px-2;
+}
+
+.size-default {
+    @apply h-8 max-h-8 min-w-[2rem] text-xs md:text-sm align-middle px-2;
+}
+
+.size-large {
+
+}

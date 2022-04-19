@@ -2,37 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
-html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 :root {
-    --c-primary: #6657D5;
-    --c-oposite: #f7f7f7;
-    --c-subdued: #f7f7f7;
+  --c-ground: #f7f7fa;
+  --c-primary: #2860e1;
+  --c-oposite: #f7f7f7;
+  --c-subdued: #f7f7f7;
 }
 
 .theme-gray {
-    --c-primary: #15181c;
-    --c-oposite: #d9d9d9;
+  --c-primary: #15181c;
+  --c-oposite: #d9d9d9;
 }
 
 .theme-purple {
-    --c-primary: #6657D5;
-    --c-oposite: #d9d9d9;
-
+  --c-primary: #6657d5;
+  --c-oposite: #d9d9d9;
 }
 
 .theme-orange {
-    --c-primary:#d57f57; 
-    --c-oposite: #d9d9d9;
-
+  --c-primary: #d57f57;
+  --c-oposite: #d9d9d9;
 }
 
 .theme-blue {
-    --c-primary: #5779d5;
-    --c-oposite: #d9d9d9;
-
+  --c-primary: #5779d5;
+  --c-oposite: #d9d9d9;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+  background-color: var(--c-ground);
+  font-family: "Roboto", sans-serif;
+}
+
+.text-main-color {
+  @apply text-black dark:text-[#e5e7eb];
+}
+
+.bg-purple-color {
+  @apply bg-[#9540ea];
+}
+
+.bg-orange-color {
+  @apply bg-[#edc500];
+}
+
+.bg-main-color {
+  @apply bg-white dark:bg-[#141415];
+}
+
+.bg-surface-color {
+  @apply bg-neutral-50 dark:bg-[#1d1e1f];
+}
+
+.divider {
+  @apply h-[.5px] bg-neutral-200 dark:bg-neutral-800  w-full;
+}
+
+.divider-primary-color {
+  @apply dark:bg-[#212121];
+}
+
+.border-primary-color {
+  @apply border-[#212121];
+}
+
+/* Content */
+.p-content {
+  @apply rounded-lg  px-5 py-10 text-neutral-700 dark:text-neutral-300 bg-surface-color;
+}
+
+.p-content > * + * {
+  margin-top: 1.5rem;
+}
+.p-content p {
+    @apply tracking-wide leading-6;
+}
+.p-content h1 {
+    @apply text-3xl font-bold;
+}
+.p-content h2 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.p-content ul {
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+.p-content a {
+  color: #177fe7;
+  text-decoration: underline;
 }

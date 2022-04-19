@@ -3,9 +3,11 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
+        groun: "var(--c-ground)",
         primary: "var(--c-primary)",
         oposite: "var(--c-oposite)",
         subdued: "var(--c-subdued)",
