@@ -35,9 +35,14 @@ export function Header(props) {
     }
   };
   return (
-    <header className="px-4 h-16 border-b border-neutral-200 dark:border-neutral-800 w-full flex items-center justify-between sticky top-0 z-[9999] gap-8">
+    <header className="bg-main-color px-4 h-16 border-b border-neutral-200 dark:border-neutral-800 w-full flex items-center justify-between sticky top-0 z-[9999] gap-8">
       <div className="container mx-auto flex items-center justify-between">
-        <Logo />
+        <div className="flex items-center gap-2">
+          <Logo />
+          <span className="font-medium px-2 border text-yellow-500 border-yellow-500 dark:border-yellow-300 dark:text-yellow-300 text-sm rounded-md">
+            Beta
+          </span>
+        </div>
         <div>{renderThemeChanger()}</div>
       </div>
       {/*    <div className="flex items-center gap-6">
