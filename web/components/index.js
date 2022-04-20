@@ -11,3 +11,5 @@ export * from "./Avatar";
 export * from "./Label";
 export * from "./TextField";
 export * from "./Footer";
+export * from "./Posts";
+export * from "./Tag";

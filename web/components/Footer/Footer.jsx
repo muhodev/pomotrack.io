@@ -2,14 +2,14 @@ import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
 const items = [
-  /*   {
+  {
     title: "pomodoroTechnique",
     url: "/what-is-pomodoro-technique",
   },
   {
     title: "blog",
     url: "/blog",
-  }, */
+  },
   {
     title: "about",
     url: "/about",
