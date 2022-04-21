@@ -1,10 +1,13 @@
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
-const items = [
+const items = (language) => [
   {
     title: "pomodoroTechnique",
-    url: "/what-is-pomodoro-technique",
+    url:
+      language === "tr"
+        ? "/blog/pomodoro-teknigi-nedir-nasil-uygulanir"
+        : "/blog/what-is-pomodoro-technique",
   },
   {
     title: "blog",
@@ -32,7 +35,7 @@ function setCookie(cname, cvalue, exdays) {
 }
 
 export function Footer(props) {
-  const { t } = useTranslation("common");
+  const { t, i18n } = useTranslation("common");
   return (
     <footer className="border-t border-neutral-200 dark:border-neutral-800">
       <div className="container mx-auto py-4 flex flex-col-reverse lg:flex-row justify-between items-center gap-4">
@@ -44,7 +47,7 @@ export function Footer(props) {
           . All rights reserved.
         </p>
         <div className="flex flex-col lg:flex-row items-center gap-4 text-neutral-600 dark:text-neutral-400 ">
-          {items.map((item) => (
+          {items(i18n.language).map((item) => (
             <Link href={item?.url} key={item?.url}>
               <a className="dark:hover:text-neutral-300 hover:underline">
                 {t(item.title)}
