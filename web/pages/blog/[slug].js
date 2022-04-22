@@ -13,9 +13,9 @@ export default function BlogPost(props) {
   return (
     <Layout>
       <Head title={"Blog"} description={t("siteDescription")}></Head>
-      <div className="container mx-auto my-6">
+      <div className="container mx-auto my-6 lg:max-w-screen-lg">
         <div className="">
-          <div className="text-center">
+          <div className="">
             <h1 className="text-3xl font-bold mb-5">{props?.post?.title}</h1>
             <p className="pb-4 text-neutral-600 dark:text-neutral-300">
               {props?.post?.excerpt}
@@ -33,7 +33,7 @@ export default function BlogPost(props) {
               <time>{new Date(props?.post?.date)?.toLocaleDateString()}</time>
             </div>
           </div>
-          <figure className="flex justify-center mx-auto max-w-screen-sm py-4">
+          <figure className="flex justify-center py-4">
             <img
               className="w-full rounded-lg object-cover"
               src={props?.post?.cover}
@@ -41,15 +41,14 @@ export default function BlogPost(props) {
             />
           </figure>
         </div>
-        <div className="p-content mt-8">
-          {props?.post?.content && (
-            <div
-              dangerouslySetInnerHTML={{
-                __html: md().render(props?.post?.content),
-              }}
-            />
-          )}
-        </div>
+        {props?.post?.content && (
+          <div
+            className="p-post__content mt-8"
+            dangerouslySetInnerHTML={{
+              __html: md().render(props?.post?.content),
+            }}
+          />
+        )}
       </div>
     </Layout>
   );
