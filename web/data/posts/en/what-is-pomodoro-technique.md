@@ -1,7 +1,7 @@
 ---
 title: 'What is pomodoro technique?'
 excerpt: The Pomodoro technique is a time management technique developed by Francesco Cirillo in the 1980s to manage time efficiently.
-cover:  https://blog.hubspot.com/hubfs/instagram-marketing-report-1.jpg 
+cover:  /images/posts/what-is-pomodoro-en.jpg
 date: '2021-09-22'
 tags:
   - pomodoro

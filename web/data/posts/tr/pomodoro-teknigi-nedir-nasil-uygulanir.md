@@ -1,7 +1,7 @@
 ---
 title: 'Pomodoro Tekniği Nedir? Nasıl Uygulanır?'
 excerpt: Pomodoro tekniği, 1980'lerde Francesco Cirillo tarafından geliştirilmiş bir zaman yönetimi tekniğidir
-cover:  https://blog.hubspot.com/hubfs/instagram-marketing-report-1.jpg 
+cover:  /images/posts/pomodoro-nedir-tr.jpg
 date: '2021-09-22'
 tags:
   - pomodoro
