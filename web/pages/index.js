@@ -22,13 +22,32 @@ export default function Home() {
   } = usePomodoro();
 
   useEffect(() => {}, [timerString]);
-
   return (
     <Layout>
       <Head
         title={startedPomodoro ? timerString : HOME_TITLE}
         description={t("siteDescription")}
       ></Head>
+
+      <div className="invisible opacity-0 pointer-events-none">
+        {/* The button For Safari audio problem */}
+        <button
+          id="ring-audio-button"
+          onClick={() => {
+            document
+              .getElementById("ring-audio")
+              .play()
+              .catch(() => {
+                alert("Error playing audio");
+              });
+          }}
+        >
+          Button
+        </button>
+        <audio id="ring-audio">
+          <source src="/audios/egg-timer-ding.mp3" type="audio/mpeg"></source>
+        </audio>
+      </div>
       <div>
         <div>
           <div

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const pomodoroTypes = {
   pomodoro: 1500,
@@ -12,6 +12,7 @@ export const usePomodoro = () => {
   const [timer, setTimer] = useState(pomodoroTypes["pomodoro"]);
   const [pomodoroIntervalCount, setPomodoroIntervalCount] = useState(1);
   const [longBreakIntervalCount, setLongBreakIntervalCount] = useState(4);
+  const audioRef = useRef(null);
 
   const minutes = Math.floor(timer / 60);
   const seconds = timer % 60;
@@ -37,6 +38,9 @@ export const usePomodoro = () => {
   };
 
   useEffect(() => {
+    if (!audioRef.current) {
+      audioRef.current = new Audio("/audios/egg-timer-ding.mp3");
+    }
     let interval;
     const clearTimerInterval = () => clearInterval(interval);
 
@@ -48,6 +52,7 @@ export const usePomodoro = () => {
           return newTimer;
         });
         if (newTimer === 0) {
+          document.getElementById("ring-audio-button")?.click();
           handleNextPomodoroType();
         }
       }, 1000);
