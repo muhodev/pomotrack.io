@@ -1,7 +1,9 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://pomotrack.io
+
+# Sitemaps
 Sitemap: https://pomotrack.io/sitemap.xml
