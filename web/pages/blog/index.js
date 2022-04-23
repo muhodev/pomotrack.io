@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import matter from "gray-matter";
 
 import { Head, Layout, PostPreview } from "components";
+import Link from "next/link";
 
 export default function Blog(props) {
   const { t } = useTranslation("common");
@@ -13,7 +14,11 @@ export default function Blog(props) {
       <Head title={"Blog"} description={t("siteDescription")}></Head>
       <div className="container mx-auto my-6">
         <div>
-          <h1 className="text-3xl font-bold mb-5">Blog</h1>
+          <h1 className="text-3xl font-bold mb-5">
+            <Link href="/blog">
+              <a className="hover:underline">Blog</a>
+            </Link>
+          </h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-6">
             {posts?.map((post) => (
               <PostPreview {...post} key={post.slug} />
