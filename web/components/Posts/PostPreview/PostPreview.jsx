@@ -2,7 +2,6 @@ import { Tag } from "components/Tag";
 import Link from "next/link";
 
 export function PostPreview(props) {
-  console.log(props.tags);
   return (
     <article className="bg-surface-color rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800">
       <header>

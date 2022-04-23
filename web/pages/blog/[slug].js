@@ -81,7 +81,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug }, locale }) {
   const fileName = fs.readFileSync(`data/posts/${locale}/${slug}.md`, "utf-8");
   const { data: frontmatter, content } = matter(fileName);
-  console.log({ content, frontmatter });
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
