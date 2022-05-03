@@ -19,6 +19,11 @@ class MyDocument extends Document {
             rel="canonical"
             href={`${process.env.NEXT_PUBLIC_SITE_URL}${this?.props?.canonicalBase}`}
           />
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5334444632416828"
+            crossorigin="anonymous"
+          ></script>
         </Head>
         <body>
           <Main />
